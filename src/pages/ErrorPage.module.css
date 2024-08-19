@@ -1,0 +1,13 @@
+.error_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  gap: 1rem;
+  color: black;
+}
+
+.error_page > p {
+  font-size: 1.5rem;
+}
