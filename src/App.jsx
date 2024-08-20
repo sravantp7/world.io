@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 import AppLayout from "./pages/AppLayout";
 import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
+import Login from "./pages/Login";
 
 // Router
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <p>Login</p>,
+    element: <Login />,
   },
 ]);
 
