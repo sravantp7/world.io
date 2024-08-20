@@ -1,14 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import Logo from "./Logo";
 
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
       {/* Logo */}
-      <Link to={"/"} id={styles.logo}>
-        <img src="/icon.png" alt="Logo" className={styles.logoImg} />
-        <span>World.io</span>
-      </Link>
+      <Logo />
 
       {/* Navbar menus */}
       <ul className={styles.menus}>
