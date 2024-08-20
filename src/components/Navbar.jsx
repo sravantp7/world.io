@@ -13,13 +13,13 @@ export default function Navbar() {
       {/* Navbar menus */}
       <ul className={styles.menus}>
         <li>
-          <NavLink>Product</NavLink>
+          <NavLink to={"/product"}>Product</NavLink>
         </li>
         <li>
-          <NavLink>Pricing</NavLink>
+          <NavLink to={"/pricing"}>Pricing</NavLink>
         </li>
         <li>
-          <NavLink>Login</NavLink>
+          <NavLink to={"/login"}>Login</NavLink>
         </li>
       </ul>
     </nav>
