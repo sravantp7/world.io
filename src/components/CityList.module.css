@@ -12,13 +12,13 @@
 }
 
 .city {
-  border: 1px solid black;
+  border-left: 3px solid rgb(5, 190, 5);
   padding: 1rem 2rem;
-  width: 100%;
+  width: 95%;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 3px 3px black;
+  box-shadow: 3px 3px 1px rgb(42, 36, 36);
   background-color: var(--color-dark--2);
 }
 

@@ -7,6 +7,7 @@ export default function CityList() {
   // Convert date to given format
   function getDate(date) {
     const day = date.getDate();
+    // Get full month name from date
     const month = date.toLocaleString("default", { month: "long" });
     const year = date.getFullYear();
 
