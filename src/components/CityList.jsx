@@ -1,8 +1,10 @@
 import styles from "./CityList.module.css";
 import { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 
 export default function CityList() {
-  const [cities, setCities] = useState([]);
+  const { cities } = useLoaderData();
+  //   const [cities, setCities] = useState([]);
 
   // Convert date to given format
   function getDate(date) {
@@ -15,6 +17,7 @@ export default function CityList() {
   }
 
   // Fetching cities list from json-server
+  /*
   useEffect(() => {
     async function fetchCities() {
       const res = await fetch("http://localhost:8000/cities");
@@ -23,7 +26,7 @@ export default function CityList() {
     }
 
     fetchCities();
-  }, []);
+  }, []); */
   return (
     <ul className={styles.cityList}>
       {cities.length > 0 &&
