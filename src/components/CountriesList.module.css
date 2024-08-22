@@ -19,6 +19,7 @@
   background-color: var(--color-dark--2);
   box-shadow: 2px 2px 3px black;
   letter-spacing: 1px;
+  border-left: 3px solid orange;
 }
 
 .flag {

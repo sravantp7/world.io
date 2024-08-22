@@ -11,6 +11,10 @@
   margin-bottom: 3rem;
 }
 
+.cityList li {
+  width: 100%;
+}
+
 .city {
   border-left: 3px solid rgb(5, 190, 5);
   padding: 1rem 2rem;
@@ -26,6 +30,13 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.cityList a:link,
+.cityList a:visited {
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem 2rem;
 }
 
 .city button {

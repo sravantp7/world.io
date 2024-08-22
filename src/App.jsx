@@ -8,6 +8,7 @@ import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import CountiesList from "./components/CountriesList";
+import CityInfo from "./components/CityInfo";
 
 // Loader function used to load city information which then passed to routes element
 async function loadCities() {
@@ -34,15 +35,29 @@ const router = createBrowserRouter([
     children: [
       {
         // Render cityList as a default ui for app
-        index: true,
+        path: "",
         element: <CityList />,
         loader: loadCities,
+        children: [
+          {
+            path: ":cityId",
+            element: <CityInfo />,
+            loader: loadCities,
+          },
+        ],
       },
       {
         path: "cities",
         element: <CityList />,
         // Loading data for the component (react router way)
         loader: loadCities,
+        children: [
+          {
+            path: ":cityId",
+            element: <CityInfo />,
+            loader: loadCities,
+          },
+        ],
       },
       {
         path: "countries",
