@@ -41,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: "cities",
         element: <CityList />,
+        // Loading data for the component (react router way)
         loader: loadCities,
       },
       {

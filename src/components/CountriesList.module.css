@@ -1,0 +1,26 @@
+.countriesList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.countryCard {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  background-color: var(--color-dark--2);
+  box-shadow: 2px 2px 3px black;
+  letter-spacing: 1px;
+}
+
+.flag {
+  font-size: 3rem;
+}

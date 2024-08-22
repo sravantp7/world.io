@@ -33,6 +33,13 @@ export default function CityList() {
     <ul className={styles.cityList}>
       {cities.length > 0 &&
         cities.map((city) => <CityItem key={city.id} city={city} />)}
+
+      {/* Displays message when no cities present */}
+      {cities.length === 0 && (
+        <p className={styles.message}>
+          Please add your first city by clicking on the map
+        </p>
+      )}
     </ul>
   );
 }

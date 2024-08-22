@@ -37,4 +37,16 @@
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.city button:hover {
+  background-color: rgb(255, 238, 0);
+  color: black;
+}
+
+.message {
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-top: 5rem;
 }
