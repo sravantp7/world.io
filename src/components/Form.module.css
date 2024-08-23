@@ -42,3 +42,16 @@
   font-family: inherit;
   font-size: 1.2rem;
 }
+
+.btn {
+  border: none;
+  background-color: green;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.backBtn {
+  background-color: orange;
+}

@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import CountiesList from "./components/CountriesList";
 import CityInfo from "./components/CityInfo";
+import Form from "./components/Form";
 
 // Loader function used to load city information which then passed to routes element
 async function loadCities() {
@@ -33,10 +34,10 @@ const router = createBrowserRouter([
     path: "/app",
     element: <AppLayout />,
     children: [
+      /*
       {
         // Render cityList as a default ui for app
-        path: "",
-        element: <CityList />,
+        index: true,
         loader: loadCities,
         children: [
           {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
             loader: loadCities,
           },
         ],
-      },
+      }, */
       {
         path: "cities",
         element: <CityList />,
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "form",
-        element: <p>Form</p>,
+        element: <Form />,
       },
     ],
   },

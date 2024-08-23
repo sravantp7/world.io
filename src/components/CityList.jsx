@@ -51,9 +51,12 @@ export default function CityList() {
 }
 
 function CityItem({ city }) {
+  const {
+    position: { lat, lng },
+  } = city;
   return (
     <li>
-      <Link to={`${city.id}`} className={styles.city}>
+      <Link to={`${city.id}?lat=${lat}&lng=${lng}`} className={styles.city}>
         <div>
           <span>{city.emoji}</span>
           <span>{city.cityName}</span>
