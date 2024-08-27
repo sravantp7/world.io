@@ -1,6 +1,7 @@
 import styles from "./CityList.module.css";
 // import { useState, useEffect } from "react";
 import { Outlet, useLoaderData, useParams, Link } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
 
 // Convert date to given format
 function getDate(date) {
@@ -14,7 +15,10 @@ function getDate(date) {
 
 export default function CityList() {
   // Getting data from the loader function in the route
-  const { cities } = useLoaderData();
+  //   const { cities } = useLoaderData();
+
+  /* Using context to get the cities data */
+  const { cities } = useCities();
 
   //   const [cities, setCities] = useState([]);
 

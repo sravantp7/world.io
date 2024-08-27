@@ -10,6 +10,7 @@ import CityList from "./components/CityList";
 import CountiesList from "./components/CountriesList";
 import CityInfo from "./components/CityInfo";
 import Form from "./components/Form";
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 // Loader function used to load city information which then passed to routes element
 async function loadCities() {
@@ -51,19 +52,19 @@ const router = createBrowserRouter([
         path: "cities",
         element: <CityList />,
         // Loading data for the component (react router way)
-        loader: loadCities,
+        // loader: loadCities,
         children: [
           {
             path: ":cityId",
             element: <CityInfo />,
-            loader: loadCities,
+            // loader: loadCities,
           },
         ],
       },
       {
         path: "countries",
         element: <CountiesList />,
-        loader: loadCities,
+        // loader: loadCities,
       },
       {
         path: "form",
@@ -86,5 +87,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CitiesProvider>
+      <RouterProvider router={router} />
+    </CitiesProvider>
+  );
 }

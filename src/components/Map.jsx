@@ -12,6 +12,8 @@ export default function Map() {
     navigator.geolocation.getCurrentPosition((pos) => {
       const latitude = pos.coords.latitude;
       const longitude = pos.coords.longitude;
+
+      // Updating URL params programatically
       setSearchParams({ lat: latitude, lng: longitude });
     });
   }

@@ -1,10 +1,12 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
 
 export default function CityInfo() {
   // Getting the cityId from the URL /cities/:cityId
   const { cityId } = useParams();
-  const { cities } = useLoaderData();
+  // const { cities } = useLoaderData();
+  const { cities } = useCities(); //Using context
 
   // Finding the city which matched with the cityId from the URL
   const [targetCity] = cities.filter((city) => city.id == cityId);
