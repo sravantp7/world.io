@@ -1,0 +1,14 @@
+.locBtn {
+  position: absolute;
+  bottom: 8rem;
+  right: 20%;
+  z-index: 999999;
+  border: none;
+  outline: none;
+  background-color: rgb(47, 178, 66);
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+}

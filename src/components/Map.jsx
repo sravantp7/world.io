@@ -10,6 +10,7 @@ import {
 } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
+import useGeolocation from "../hooks/useGeolocation";
 
 export default function Map() {
   // Here searchParams is of type URLSearchParams and contains function to access its values
@@ -20,13 +21,15 @@ export default function Map() {
   // State which is used to move map view when a city from the citylist is clicked
   const [mapPos, setMapPos] = useState([40, 0]);
 
-  function updateMyLocation() {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      const latitude = pos.coords.latitude;
-      const longitude = pos.coords.longitude;
+  // custom hook to get the current location of the user
+  const { position, isLoading, getLocation } = useGeolocation({
+    lat: 40,
+    lng: 0,
+  });
 
-      setMapPos([latitude, longitude]);
-    });
+  // Fetching current location of the user
+  function handleGetLocation() {
+    getLocation();
   }
 
   // Update map position when we get lat and lng via seach params
@@ -38,27 +41,40 @@ export default function Map() {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    setMapPos([position.lat, position.lng]);
+  }, [position]);
+
   return (
-    <MapContainer center={mapPos} zoom={8} scrollWheelZoom={true}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-      />
+    <>
+      <MapContainer center={mapPos} zoom={8} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+        />
 
-      {/* Rendering marker for each cities */}
-      {cities.map(({ id, position, cityName, emoji }) => (
-        <Marker position={[position.lat, position.lng]} key={id}>
-          <Popup>
-            <span>{emoji}</span>
-            <span>{cityName}</span>
-          </Popup>
-        </Marker>
-      ))}
+        {/* Rendering marker for each cities */}
+        {cities.map(({ id, position, cityName, emoji }) => (
+          <Marker position={[position.lat, position.lng]} key={id}>
+            <Popup>
+              <span>{emoji}</span>
+              <span>{cityName}</span>
+            </Popup>
+          </Marker>
+        ))}
 
-      {/* Updating map view when the postion changes */}
-      <ChangeMapView position={mapPos} />
-      <DetectClick />
-    </MapContainer>
+        {/* Updating map view when the postion changes */}
+        <ChangeMapView position={mapPos} />
+        <DetectClick />
+      </MapContainer>
+      <button
+        className={styles.locBtn}
+        onClick={handleGetLocation}
+        disabled={isLoading}
+      >
+        {isLoading ? "Loading Current Location ..." : "Use Current Location"}
+      </button>
+    </>
   );
 }
 
