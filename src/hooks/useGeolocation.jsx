@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function useGeolocation(defaultPosition) {
-  const [position, setPosition] = useState(defaultPosition);
+export default function useGeolocation() {
+  const [position, setPosition] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   // Get user current location using geolocation api of the browser.

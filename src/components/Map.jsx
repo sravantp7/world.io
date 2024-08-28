@@ -22,10 +22,7 @@ export default function Map() {
   const [mapPos, setMapPos] = useState([40, 0]);
 
   // custom hook to get the current location of the user
-  const { position, isLoading, getLocation } = useGeolocation({
-    lat: 40,
-    lng: 0,
-  });
+  const { position, isLoading, getLocation } = useGeolocation();
 
   // Fetching current location of the user
   function handleGetLocation() {
@@ -42,7 +39,9 @@ export default function Map() {
   }, [searchParams]);
 
   useEffect(() => {
-    setMapPos([position.lat, position.lng]);
+    if (position) {
+      setMapPos([position.lat, position.lng]);
+    }
   }, [position]);
 
   return (
@@ -67,13 +66,15 @@ export default function Map() {
         <ChangeMapView position={mapPos} />
         <DetectClick />
       </MapContainer>
-      <button
-        className={styles.locBtn}
-        onClick={handleGetLocation}
-        disabled={isLoading}
-      >
-        {isLoading ? "Loading Current Location ..." : "Use Current Location"}
-      </button>
+      {!position && (
+        <button
+          className={styles.locBtn}
+          onClick={handleGetLocation}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading Current Location ..." : "Use Current Location"}
+        </button>
+      )}
     </>
   );
 }
