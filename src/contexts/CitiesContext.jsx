@@ -7,6 +7,9 @@ const CitiesContext = createContext();
 export function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
 
+  // State stores the current clicked city
+  const [currentCity, setCurrentCity] = useState({});
+
   useEffect(() => {
     // Fetch cities information
     async function fetchCities() {
@@ -23,7 +26,7 @@ export function CitiesProvider({ children }) {
   }, []);
 
   return (
-    <CitiesContext.Provider value={{ cities }}>
+    <CitiesContext.Provider value={{ cities, currentCity, setCurrentCity }}>
       {children}
     </CitiesContext.Provider>
   );

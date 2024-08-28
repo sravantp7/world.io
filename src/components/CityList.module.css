@@ -26,6 +26,12 @@
   background-color: var(--color-dark--2);
 }
 
+/* Applies border for currently active city */
+.currentCity {
+  border: 1.5px solid rgb(5, 190, 5);
+  border-left: 4px solid rgb(5, 190, 5);
+}
+
 .city > div {
   display: flex;
   gap: 1rem;

@@ -34,7 +34,7 @@ export default function CityList() {
     fetchCities();
   }, []); */
 
-  // get cityId from the url /cities/:cityId
+  // get cityId from the url params /cities/:cityId
   const { cityId } = useParams();
 
   return (
@@ -54,13 +54,22 @@ export default function CityList() {
   );
 }
 
+// Renders city list items
 function CityItem({ city }) {
   const {
     position: { lat, lng },
   } = city;
+
+  const { currentCity, setCurrentCity } = useCities();
+
   return (
-    <li>
-      <Link to={`${city.id}?lat=${lat}&lng=${lng}`} className={styles.city}>
+    <li onClick={() => setCurrentCity(city)}>
+      <Link
+        to={`${city.id}?lat=${lat}&lng=${lng}`}
+        className={`${styles.city} ${
+          currentCity.id == city.id ? `${styles.currentCity}` : ""
+        }`}
+      >
         <div>
           <span>{city.emoji}</span>
           <span>{city.cityName}</span>
