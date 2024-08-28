@@ -1,6 +1,13 @@
 import styles from "./Map.module.css";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+  useMapEvent,
+} from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 
@@ -21,8 +28,6 @@ export default function Map() {
       setMapPos([latitude, longitude]);
     });
   }
-
-  const navigate = useNavigate();
 
   // Update map position when we get lat and lng via seach params
   useEffect(() => {
@@ -52,6 +57,7 @@ export default function Map() {
 
       {/* Updating map view when the postion changes */}
       <ChangeMapView position={mapPos} />
+      <DetectClick />
     </MapContainer>
   );
 }
@@ -61,5 +67,22 @@ export default function Map() {
 function ChangeMapView({ position }) {
   const map = useMap();
   map.setView(position);
+
+  return null;
+}
+
+// Component that handles click event on the map
+function DetectClick() {
+  const navigate = useNavigate();
+
+  // react leaflet hook for handling clicking in the map
+  useMapEvent({
+    click(e) {
+      // Navigate to form when clicking on the map
+      // along with lat and lng as url params
+      navigate(`/app/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
+  });
+
   return null;
 }
