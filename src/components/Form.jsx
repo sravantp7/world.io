@@ -1,14 +1,19 @@
 import styles from "./Form.module.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Form() {
+  // reads data from the url query
+  const [searchParams] = useSearchParams();
+
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
 
   const navigate = useNavigate();
+
+  console.log(searchParams);
 
   return (
     <form className={styles.form}>
