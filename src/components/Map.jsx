@@ -64,6 +64,8 @@ export default function Map() {
 
         {/* Updating map view when the postion changes */}
         <ChangeMapView position={mapPos} />
+
+        {/* Handles map click event */}
         <DetectClick />
       </MapContainer>
       {!position && (
