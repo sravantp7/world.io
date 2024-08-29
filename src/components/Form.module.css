@@ -55,3 +55,10 @@
 .backBtn {
   background-color: orange;
 }
+
+.message {
+  font-size: 1.5rem;
+  margin-top: 4rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
