@@ -31,7 +31,7 @@
 .btn {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10rem;
+  padding-right: 5rem;
   gap: 0.5rem;
 }
 
@@ -41,7 +41,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   background-color: lightgray;
   color: black;

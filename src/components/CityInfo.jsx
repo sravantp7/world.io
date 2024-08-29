@@ -67,9 +67,6 @@ export default function CityInfo() {
         <p>your notes</p>
         <p>{notes}</p>
       </div>
-      <div className={styles.header}>
-        <p>Learn More</p>
-      </div>
       <div className={styles.btn}>
         <Link to={"/app/cities"}>
           <span>&larr;</span>

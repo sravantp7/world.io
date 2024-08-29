@@ -6,7 +6,10 @@ export default function useGeolocation() {
 
   // Get user current location using geolocation api of the browser.
   function getLocation() {
-    if (!navigator.geolocation) return;
+    if (!navigator.geolocation) {
+      console.log("Navigator Not Found");
+      return;
+    }
 
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(

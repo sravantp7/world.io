@@ -2,6 +2,11 @@ import styles from "./Form.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
+// Date picker package
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useCities } from "../contexts/CitiesContext";
+
 // Function for converting country code to emoji
 function countryCodeToFlagEmoji(countryCode) {
   const codePoints = countryCode
@@ -24,13 +29,44 @@ export default function Form() {
   const [emoji, setEmoji] = useState("");
   const [error, setError] = useState(false);
 
+  const { createNewCity, isLoading: isCreatingCity } = useCities();
+
   const navigate = useNavigate();
 
   // Gets the user clicked location's lat and lng value.
   const lat = +searchParams.get("lat");
   const lng = +searchParams.get("lng");
 
+  // Function that handles the creation of new city by the user
+  function handleCreateCity(e) {
+    e.preventDefault();
+    if (!cityName || !date) return;
+
+    // Creating new city object from the data [id will be automatically created by the json-server library].
+    const newCity = {
+      cityName,
+      country,
+      emoji,
+      date,
+      notes,
+      position: {
+        lat,
+        lng,
+      },
+    };
+
+    // this function update isCreatingCity to true and once new city is created it will changed to false
+    createNewCity(newCity);
+
+    // and when isCreatinCity is false ie, created city then navigate back to /app/cities page
+    if (!isCreatingCity) {
+      // go back to cities page after adding new city
+      navigate("/app/cities");
+    }
+  }
+
   useEffect(() => {
+    if (!lat && !lng) return;
     // Fetch cities information using the lat and lng from another api
     // api -> https://api-bdc.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en
     async function fetchCity() {
@@ -63,6 +99,15 @@ export default function Form() {
     fetchCity();
   }, [lat, lng]);
 
+  // Prevent selecting future date as visited date
+  useEffect(() => {
+    const currentDate = new Date();
+    if (date > currentDate) {
+      setDate(new Date());
+      alert("You can't select a future date.");
+    }
+  }, [date]);
+
   if (error) {
     return (
       <p className={styles.message}>It's not a valid city, Please try again!</p>
@@ -74,7 +119,7 @@ export default function Form() {
   }
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleCreateCity}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -88,10 +133,16 @@ export default function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+        {/* <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
+        /> */}
+        <DatePicker
+          id="date"
+          selected={date}
+          onChange={(date) => setDate(date)}
+          dateFormat={"dd/MM/yyyy"}
         />
       </div>
 
@@ -105,7 +156,9 @@ export default function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <button className={styles.btn}>Add</button>
+        <button className={styles.btn} disabled={isCreatingCity}>
+          Add
+        </button>
         <button
           className={`${styles.btn} ${styles.backBtn}`}
           onClick={(e) => {
