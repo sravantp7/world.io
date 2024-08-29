@@ -60,10 +60,10 @@ function CityItem({ city }) {
     position: { lat, lng },
   } = city;
 
-  const { currentCity, setCurrentCity } = useCities();
+  const { currentCity, setCurrentCity, deleteCity } = useCities();
 
   return (
-    <li onClick={() => setCurrentCity(city)}>
+    <li onClick={() => setCurrentCity(city)} className={styles.container}>
       <Link
         to={`${city.id}?lat=${lat}&lng=${lng}`}
         className={`${styles.city} ${
@@ -76,9 +76,9 @@ function CityItem({ city }) {
         </div>
         <div>
           <span>({getDate(new Date(city.date))})</span>
-          <button>x</button>
         </div>
       </Link>
+      <button onClick={() => deleteCity(city.id)}>x</button>
     </li>
   );
 }

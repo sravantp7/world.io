@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .cityList {
   width: 100%;
   display: flex;
@@ -45,7 +51,7 @@
   padding: 1.5rem 2rem;
 }
 
-.city button {
+.container button {
   background-color: rgb(59, 58, 58);
   border: 1px solid rgb(59, 58, 58);
   outline: none;
@@ -57,7 +63,7 @@
   transition: 0.5s;
 }
 
-.city button:hover {
+.container button:hover {
   background-color: rgb(255, 238, 0);
   color: black;
 }

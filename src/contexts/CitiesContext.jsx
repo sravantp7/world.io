@@ -58,9 +58,38 @@ export function CitiesProvider({ children }) {
     }
   }
 
+  // Delete city
+  async function deleteCity(cityId) {
+    try {
+      setIsLoading(true);
+      // request to json-server for deleting specific city from the cities.json file
+      const res = await fetch(`${BASE_URL}/${cityId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      await res.json();
+
+      // Filtering cities state by removing the city with id cityId
+      setCities((cities) => cities.filter((city) => city.id != cityId));
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, currentCity, setCurrentCity, createNewCity, isLoading }}
+      value={{
+        cities,
+        currentCity,
+        setCurrentCity,
+        createNewCity,
+        isLoading,
+        deleteCity,
+      }}
     >
       {children}
     </CitiesContext.Provider>
