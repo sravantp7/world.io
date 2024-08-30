@@ -65,9 +65,6 @@ export function CitiesProvider({ children }) {
       // request to json-server for deleting specific city from the cities.json file
       const res = await fetch(`${BASE_URL}/${cityId}`, {
         method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
       });
       await res.json();
 

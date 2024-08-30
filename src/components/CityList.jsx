@@ -18,7 +18,7 @@ export default function CityList() {
   //   const { cities } = useLoaderData();
 
   /* Using context to get the cities data */
-  const { cities } = useCities();
+  const { cities, isLoading } = useCities();
 
   //   const [cities, setCities] = useState([]);
 
@@ -41,6 +41,7 @@ export default function CityList() {
     <ul className={styles.cityList}>
       {cities.length > 0 &&
         !cityId &&
+        !isLoading &&
         cities.map((city) => <CityItem key={city.id} city={city} />)}
 
       {/* Displays message when no cities present */}
@@ -50,6 +51,8 @@ export default function CityList() {
         </p>
       )}
       {cityId && <Outlet />}
+
+      {isLoading && <p className={styles.message}>Deleting City ...</p>}
     </ul>
   );
 }

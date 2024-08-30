@@ -1,51 +1,15 @@
 {
   "cities": [
     {
-      "id": "40b2",
-      "cityName": "Lebedyan’",
-      "country": "Russian Federation (the)",
-      "emoji": "🇷🇺",
-      "date": "2024-08-29T14:26:59.268Z",
+      "id": "8f31",
+      "cityName": "Mora de Rubielos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-30T07:25:26.652Z",
       "notes": "",
       "position": {
-        "lat": 52.96187505907603,
-        "lng": 39.46847910238994
-      }
-    },
-    {
-      "id": "9a68",
-      "cityName": "Delice",
-      "country": "Turkiye",
-      "emoji": "🇹🇷",
-      "date": "2024-08-29T14:27:30.120Z",
-      "notes": "",
-      "position": {
-        "lat": 40.07807142745009,
-        "lng": 34.02079022235909
-      }
-    },
-    {
-      "id": "d823",
-      "cityName": "Kocasinan",
-      "country": "Turkiye",
-      "emoji": "🇹🇷",
-      "date": "2024-08-29T14:27:36.136Z",
-      "notes": "",
-      "position": {
-        "lat": 38.788345355085625,
-        "lng": 35.248709189077175
-      }
-    },
-    {
-      "id": "ee0e",
-      "cityName": "Ankara",
-      "country": "Turkiye",
-      "emoji": "🇹🇷",
-      "date": "2024-08-29T14:27:42.927Z",
-      "notes": "",
-      "position": {
-        "lat": 39.960954681586394,
-        "lng": 32.94491968947146
+        "lat": 40.233411907115055,
+        "lng": -0.7516918958803334
       }
     }
   ]
