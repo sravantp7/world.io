@@ -21,21 +21,33 @@ const initialState = {
 // Reducer function that manages state updates
 function reducer(state, action) {
   switch (action.type) {
-    case "updateCities":
+    case "cities/fetched":
       return {
         ...state,
         cities: action.payload,
       };
-    case "loading":
+    case "cities/created":
+      return {
+        ...state,
+        cities: action.payload,
+      };
+    case "cities/deleted":
+      return {
+        ...state,
+        cities: action.payload,
+      };
+    case "cities/loading":
       return {
         ...state,
         isLoading: action.payload,
       };
-    case "updateCurrentCity":
+    case "cities/currentCity":
       return {
         ...state,
         currentCity: action.payload,
       };
+    default:
+      throw new Error("Unknown action type!");
   }
 }
 
@@ -62,7 +74,7 @@ export function CitiesProvider({ children }) {
         const res = await fetch(BASE_URL);
         const data = await res.json();
         // setCities(data);
-        dispatch({ type: "updateCities", payload: data });
+        dispatch({ type: "cities/fetched", payload: data });
       } catch (error) {
         console.error(error.message);
       }
@@ -75,7 +87,7 @@ export function CitiesProvider({ children }) {
   async function createNewCity(newCity) {
     try {
       // setIsLoading(true);
-      dispatch({ type: "loading", payload: true });
+      dispatch({ type: "cities/loading", payload: true });
 
       // Creating new city
       const res = await fetch(BASE_URL, {
@@ -93,12 +105,12 @@ export function CitiesProvider({ children }) {
 
       // Updating city state with new city.
       /* setCities((cities) => [...cities, new_city]);  */
-      dispatch({ type: "updateCities", payload: [...cities, new_city] });
+      dispatch({ type: "cities/created", payload: [...cities, new_city] });
     } catch (error) {
       console.log(error.message);
     } finally {
       // setIsLoading(false);
-      dispatch({ type: "loading", payload: false });
+      dispatch({ type: "cities/loading", payload: false });
     }
   }
 
@@ -106,7 +118,7 @@ export function CitiesProvider({ children }) {
   async function deleteCity(cityId) {
     try {
       /* setIsLoading(true); */
-      dispatch({ type: "loading", payload: true });
+      dispatch({ type: "cities/loading", payload: true });
 
       // request to json-server for deleting specific city from the cities.json file
       const res = await fetch(`${BASE_URL}/${cityId}`, {
@@ -117,17 +129,17 @@ export function CitiesProvider({ children }) {
       // Filtering cities state by removing the city with id cityId
       /* setCities((cities) => cities.filter((city) => city.id != cityId)); */
       const updatedCities = cities.filter((city) => city.id != cityId); // calculate new list of cities
-      dispatch({ type: "updateCities", payload: updatedCities });
+      dispatch({ type: "cities/deleted", payload: updatedCities });
     } catch (error) {
       console.log(error.message);
     } finally {
       /* setIsLoading(false); */
-      dispatch({ type: "loading", payload: false });
+      dispatch({ type: "cities/loading", payload: false });
     }
   }
 
   function setCurrentCity(city) {
-    dispatch({ type: "updateCurrentCity", payload: city });
+    dispatch({ type: "cities/currentCity", payload: city });
   }
 
   return (

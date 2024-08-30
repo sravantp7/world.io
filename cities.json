@@ -1,27 +1,75 @@
 {
   "cities": [
     {
-      "id": "c254",
-      "cityName": "Andorra",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-08-30T08:00:50.471Z",
+      "id": "1eab",
+      "cityName": "Misserghin",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-30T10:46:51.355Z",
       "notes": "",
       "position": {
-        "lat": 41.02135510866602,
-        "lng": -0.37828058624689526
+        "lat": 35.50092819950358,
+        "lng": -0.9005537076996718
       }
     },
     {
-      "id": "1a05",
-      "cityName": "Luna",
+      "id": "46b8",
+      "cityName": "Hijar",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2024-08-30T08:00:53.194Z",
+      "date": "2024-08-30T10:50:02.213Z",
       "notes": "",
       "position": {
-        "lat": 42.147114459221015,
-        "lng": -0.9055751618550169
+        "lat": 41.21585377825921,
+        "lng": -0.6198996689508962
+      }
+    },
+    {
+      "id": "5b2c",
+      "cityName": "Falces",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-30T10:50:04.453Z",
+      "notes": "",
+      "position": {
+        "lat": 42.382894009614034,
+        "lng": -1.8282008864071946
+      }
+    },
+    {
+      "id": "871d",
+      "cityName": "Dahmouni",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-30T10:56:34.133Z",
+      "notes": "Nice",
+      "position": {
+        "lat": 35.45133638604611,
+        "lng": 1.454737771653103
+      }
+    },
+    {
+      "id": "ffd5",
+      "cityName": "Sidi Ali Ben Aoun",
+      "country": "Tunisia",
+      "emoji": "🇹🇳",
+      "date": "2024-08-30T10:56:43.427Z",
+      "notes": "Good",
+      "position": {
+        "lat": 34.73172011857956,
+        "lng": 8.977397790115864
+      }
+    },
+    {
+      "id": "0f32",
+      "cityName": "Ghassira",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2024-08-30T10:57:07.094Z",
+      "notes": "",
+      "position": {
+        "lat": 35.01347828930427,
+        "lng": 6.140344388929831
       }
     }
   ]
