@@ -32,17 +32,21 @@ export default function Map() {
   // Update map position when we get lat and lng via seach params
   useEffect(() => {
     // if searchParams exists then size will be greater than 0
-    if (searchParams.size > 0) {
+    if (searchParams.size > 0 && !position) {
       // getting selected city pos from the url and update the state
       setMapPos([+searchParams.get("lat"), +searchParams.get("lng")]);
     }
-  }, [searchParams]);
 
-  useEffect(() => {
     if (position) {
       setMapPos([position.lat, position.lng]);
     }
-  }, [position]);
+  }, [searchParams, position]);
+
+  // useEffect(() => {
+  //   if (position) {
+  //     setMapPos([position.lat, position.lng]);
+  //   }
+  // }, [position]);
 
   return (
     <>
