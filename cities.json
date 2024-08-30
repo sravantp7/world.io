@@ -1,15 +1,27 @@
 {
   "cities": [
     {
-      "id": "8f31",
-      "cityName": "Mora de Rubielos",
+      "id": "c254",
+      "cityName": "Andorra",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2024-08-30T07:25:26.652Z",
+      "date": "2024-08-30T08:00:50.471Z",
       "notes": "",
       "position": {
-        "lat": 40.233411907115055,
-        "lng": -0.7516918958803334
+        "lat": 41.02135510866602,
+        "lng": -0.37828058624689526
+      }
+    },
+    {
+      "id": "1a05",
+      "cityName": "Luna",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-30T08:00:53.194Z",
+      "notes": "",
+      "position": {
+        "lat": 42.147114459221015,
+        "lng": -0.9055751618550169
       }
     }
   ]
