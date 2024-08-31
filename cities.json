@@ -37,18 +37,6 @@
       }
     },
     {
-      "id": "871d",
-      "cityName": "Dahmouni",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2024-08-30T10:56:34.133Z",
-      "notes": "Nice",
-      "position": {
-        "lat": 35.45133638604611,
-        "lng": 1.454737771653103
-      }
-    },
-    {
       "id": "ffd5",
       "cityName": "Sidi Ali Ben Aoun",
       "country": "Tunisia",
@@ -70,6 +58,18 @@
       "position": {
         "lat": 35.01347828930427,
         "lng": 6.140344388929831
+      }
+    },
+    {
+      "id": "0d63",
+      "cityName": "Pancrudo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-08-30T12:22:38.338Z",
+      "notes": "",
+      "position": {
+        "lat": 40.75974059207392,
+        "lng": -0.9711223919646695
       }
     }
   ]

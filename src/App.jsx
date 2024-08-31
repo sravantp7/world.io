@@ -11,6 +11,7 @@ import CountiesList from "./components/CountriesList";
 import CityInfo from "./components/CityInfo";
 import Form from "./components/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // Loader function used to load city information which then passed to routes element
 async function loadCities() {
@@ -89,7 +90,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <CitiesProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </CitiesProvider>
   );
 }

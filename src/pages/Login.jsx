@@ -1,17 +1,13 @@
 import styles from "./Login.module.css";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Login() {
-  const [email, setEmail] = useState("admin");
-  const [password, setPassword] = useState("admin@email.com");
+  const [email, setEmail] = useState("admin@email.com");
+  const [password, setPassword] = useState("admin");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("User details submitted");
-    console.log(email);
-    console.log(password);
-  }
+  const { loggedIn, setLoggedIn, handleLogin } = useAuth();
 
   return (
     <main className={styles.login}>
@@ -36,7 +32,13 @@ export default function Login() {
           />
         </div>
         <div>
-          <button onClick={handleSubmit} className={styles.btn}>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleLogin(email, password);
+            }}
+            className={styles.btn}
+          >
             Login
           </button>
         </div>
