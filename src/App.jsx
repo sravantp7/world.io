@@ -89,10 +89,10 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <CitiesProvider>
-      <AuthProvider>
+    <AuthProvider>
+      <CitiesProvider>
         <RouterProvider router={router} />
-      </AuthProvider>
-    </CitiesProvider>
+      </CitiesProvider>
+    </AuthProvider>
   );
 }

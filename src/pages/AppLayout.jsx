@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Map from "../components/Map";
 
 import { Navigate } from "react-router-dom";
+import User from "../components/User";
 
 export default function AppLayout() {
   return (
@@ -11,6 +12,9 @@ export default function AppLayout() {
       <Navigate to={"cities"} replace={true} />
       <Sidebar />
       <Map />
+
+      {/* Renders current user details */}
+      <User />
     </div>
   );
 }

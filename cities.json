@@ -25,18 +25,6 @@
       }
     },
     {
-      "id": "5b2c",
-      "cityName": "Falces",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-08-30T10:50:04.453Z",
-      "notes": "",
-      "position": {
-        "lat": 42.382894009614034,
-        "lng": -1.8282008864071946
-      }
-    },
-    {
       "id": "ffd5",
       "cityName": "Sidi Ali Ben Aoun",
       "country": "Tunisia",

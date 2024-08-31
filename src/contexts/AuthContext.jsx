@@ -11,8 +11,6 @@ export function AuthProvider({ children }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  console.log(user);
-
   // Handle Login
   function handleLogin(email, password) {
     // Usually have an api call to verify the credentials
@@ -20,9 +18,15 @@ export function AuthProvider({ children }) {
     // Simply checking with hardcoded values
     if (email === EMAIL && password === PASSWORD) {
       setLoggedIn(true);
-      setUser({ name: "Sam", email, password });
+      setUser({
+        name: "Sam",
+        avatar: "https://i.pravatar.cc/100?u=zz",
+        email,
+        password,
+      });
     } else {
       console.log("Error");
+      alert("Invalid Credentials");
     }
   }
 
@@ -33,7 +37,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ loggedIn, handleLogin, handleLogout }}>
+    <AuthContext.Provider value={{ loggedIn, user, handleLogin, handleLogout }}>
       {children}
     </AuthContext.Provider>
   );
