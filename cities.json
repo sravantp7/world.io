@@ -13,63 +13,27 @@
       }
     },
     {
-      "id": "0f32",
-      "cityName": "Ghassira",
+      "id": "70fe",
+      "cityName": "Mohammed Boudiaf",
       "country": "Algeria",
       "emoji": "🇩🇿",
-      "date": "2024-08-30T10:57:07.094Z",
+      "date": "2024-09-02T06:00:58.611Z",
       "notes": "",
       "position": {
-        "lat": 35.01347828930427,
-        "lng": 6.140344388929831
+        "lat": 34.908457853981396,
+        "lng": 4.643276599848188
       }
     },
     {
-      "id": "caba",
-      "cityName": "Trasobares",
+      "id": "8b92",
+      "cityName": "Mara",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2024-08-31T05:55:06.405Z",
+      "date": "2024-09-02T07:08:58.232Z",
       "notes": "",
       "position": {
-        "lat": 41.644183479397455,
-        "lng": -1.6579692599566598
-      }
-    },
-    {
-      "id": "c1a3",
-      "cityName": "Alcala de la Selva",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-09-02T05:28:04.494Z",
-      "notes": "",
-      "position": {
-        "lat": 40.39258071969131,
-        "lng": -0.7652160807757881
-      }
-    },
-    {
-      "id": "e449",
-      "cityName": "Beltangadi",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-09-02T05:38:26.425Z",
-      "notes": "",
-      "position": {
-        "lat": 13.07412756381517,
-        "lng": 75.26094340264174
-      }
-    },
-    {
-      "id": "b09d",
-      "cityName": "Hassan",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-09-02T05:38:32.729Z",
-      "notes": "",
-      "position": {
-        "lat": 12.93496841213425,
-        "lng": 76.27121977988068
+        "lat": 41.27367811566259,
+        "lng": -1.5119703154616662
       }
     }
   ]
