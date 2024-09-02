@@ -61,7 +61,7 @@ export default function Form() {
     // and when isCreatinCity is false ie, created city then navigate back to /app/cities page
     if (!isCreatingCity) {
       // go back to cities page after adding new city
-      navigate("/app/cities");
+      navigate(`/app/cities?lat=${lat}&lng=${lng}`);
     }
   }
 

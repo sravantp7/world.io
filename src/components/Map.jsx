@@ -32,12 +32,12 @@ export default function Map() {
   // Update map position when we get lat and lng via seach params
   useEffect(() => {
     // if searchParams exists then size will be greater than 0
-    if (searchParams.size > 0 && !position) {
+    if (searchParams.size > 0) {
       // getting selected city pos from the url and update the state
       setMapPos([+searchParams.get("lat"), +searchParams.get("lng")]);
     }
 
-    if (position) {
+    if (position && searchParams.size == 0) {
       setMapPos([position.lat, position.lng]);
     }
   }, [searchParams, position]);
@@ -71,22 +71,20 @@ export default function Map() {
 
         {/* Handles map click event */}
         <DetectClick />
-        {!position && (
-          <button
-            className={styles.locBtn}
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              handleGetLocation();
-            }}
-            disabled={isLoading}
-          >
-            {isLoading
-              ? "Loading Current Location ..."
-              : "Use Current Location"}
-          </button>
-        )}
       </MapContainer>
+      {!position && (
+        <button
+          className={styles.locBtn}
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            handleGetLocation();
+          }}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading Current Location ..." : "Use Current Location"}
+        </button>
+      )}
     </>
   );
 }
