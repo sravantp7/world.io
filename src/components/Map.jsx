@@ -71,16 +71,22 @@ export default function Map() {
 
         {/* Handles map click event */}
         <DetectClick />
+        {!position && (
+          <button
+            className={styles.locBtn}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              handleGetLocation();
+            }}
+            disabled={isLoading}
+          >
+            {isLoading
+              ? "Loading Current Location ..."
+              : "Use Current Location"}
+          </button>
+        )}
       </MapContainer>
-      {!position && (
-        <button
-          className={styles.locBtn}
-          onClick={handleGetLocation}
-          disabled={isLoading}
-        >
-          {isLoading ? "Loading Current Location ..." : "Use Current Location"}
-        </button>
-      )}
     </>
   );
 }

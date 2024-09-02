@@ -3,5 +3,5 @@
   height: calc(100vh - 5rem);
   margin: 2.5rem;
   display: grid;
-  grid-template-columns: 1.7fr 2fr;
+  grid-template-columns: 1fr 2fr;
 }

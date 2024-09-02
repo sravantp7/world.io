@@ -1,7 +1,8 @@
 .locBtn {
   position: absolute;
   bottom: 8rem;
-  right: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999999;
   border: none;
   outline: none;

@@ -1,30 +1,6 @@
 {
   "cities": [
     {
-      "id": "1eab",
-      "cityName": "Misserghin",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2024-08-30T10:46:51.355Z",
-      "notes": "",
-      "position": {
-        "lat": 35.50092819950358,
-        "lng": -0.9005537076996718
-      }
-    },
-    {
-      "id": "46b8",
-      "cityName": "Hijar",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-08-30T10:50:02.213Z",
-      "notes": "",
-      "position": {
-        "lat": 41.21585377825921,
-        "lng": -0.6198996689508962
-      }
-    },
-    {
       "id": "ffd5",
       "cityName": "Sidi Ali Ben Aoun",
       "country": "Tunisia",
@@ -58,6 +34,42 @@
       "position": {
         "lat": 41.644183479397455,
         "lng": -1.6579692599566598
+      }
+    },
+    {
+      "id": "c1a3",
+      "cityName": "Alcala de la Selva",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-09-02T05:28:04.494Z",
+      "notes": "",
+      "position": {
+        "lat": 40.39258071969131,
+        "lng": -0.7652160807757881
+      }
+    },
+    {
+      "id": "e449",
+      "cityName": "Beltangadi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-09-02T05:38:26.425Z",
+      "notes": "",
+      "position": {
+        "lat": 13.07412756381517,
+        "lng": 75.26094340264174
+      }
+    },
+    {
+      "id": "b09d",
+      "cityName": "Hassan",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-09-02T05:38:32.729Z",
+      "notes": "",
+      "position": {
+        "lat": 12.93496841213425,
+        "lng": 76.27121977988068
       }
     }
   ]
