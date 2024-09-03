@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }) {
   useEffect(() => {
     // if not logged in then always navigate back to the homepage
     if (!loggedIn) {
-      navigate("/");
+      navigate("/login");
     }
   }, [loggedIn, navigate]);
 

@@ -1,63 +1,39 @@
 {
   "cities": [
     {
-      "id": "1eab",
-      "cityName": "Misserghin",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2024-08-30T10:46:51.355Z",
-      "notes": "",
+      "id": "6e7a",
+      "cityName": "Istanbul",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-05-02T07:30:12.000Z",
+      "notes": "Very good city.",
       "position": {
-        "lat": 35.50092819950358,
-        "lng": -0.9005537076996718
+        "lat": 41.03378713521864,
+        "lng": 29.06762986497184
       }
     },
     {
-      "id": "46b8",
-      "cityName": "Hijar",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-08-30T10:50:02.213Z",
-      "notes": "",
+      "id": "d852",
+      "cityName": "Tokyo",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "date": "2024-09-02T07:35:56.621Z",
+      "notes": "Wonderful place.",
       "position": {
-        "lat": 41.21585377825921,
-        "lng": -0.6198996689508962
+        "lat": 35.679609609368605,
+        "lng": 139.80744200304406
       }
     },
     {
-      "id": "ffd5",
-      "cityName": "Sidi Ali Ben Aoun",
-      "country": "Tunisia",
-      "emoji": "🇹🇳",
-      "date": "2024-08-30T10:56:43.427Z",
-      "notes": "Good",
+      "id": "1d3b",
+      "cityName": "Seoul",
+      "country": "Korea (the Republic of)",
+      "emoji": "🇰🇷",
+      "date": "2024-09-02T07:37:35.201Z",
+      "notes": "Awesome",
       "position": {
-        "lat": 34.73172011857956,
-        "lng": 8.977397790115864
-      }
-    },
-    {
-      "id": "0f32",
-      "cityName": "Ghassira",
-      "country": "Algeria",
-      "emoji": "🇩🇿",
-      "date": "2024-08-30T10:57:07.094Z",
-      "notes": "",
-      "position": {
-        "lat": 35.01347828930427,
-        "lng": 6.140344388929831
-      }
-    },
-    {
-      "id": "caba",
-      "cityName": "Trasobares",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-08-31T05:55:06.405Z",
-      "notes": "",
-      "position": {
-        "lat": 41.644183479397455,
-        "lng": -1.6579692599566598
+        "lat": 37.58594229860422,
+        "lng": 127.01345325145874
       }
     }
   ]
