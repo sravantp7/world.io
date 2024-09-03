@@ -20,7 +20,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 
 // Lazy loading pages, ie, it will loaded on demand only.
 // That is Login page will only downloaded when we go to the login page in the app.
-// Splits bundle into separate chunks.
+// Splits bundle into separate chunks. [Code Splitting]
 const Homepage = lazy(() => import("./pages/Homepage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 const AppLayout = lazy(() => import("./pages/AppLayout"));
